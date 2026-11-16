@@ -14,6 +14,8 @@ Science Advances, 12, eaeg3307) about the red giant plus dark companion binary J
 | `j0008_analysis.py` | Reproduces every number in the note and Figure 1 |
 | `inputs.csv` | Every input value with its source |
 | `fig_m1m2.pdf`, `fig_m1m2.png` | Figure 1, as written by `j0008_analysis.py` |
+| `j0008_hrd.py` | MIST track masses quoted in the note, plus an HR and Kiel diagram |
+| `j0008_hrd.png` | The HR and Kiel diagram written by `j0008_hrd.py` (not in the note) |
 | `data/` | Catalogue exports behind `inputs.csv` (see below) |
 
 ## Reproducing the numbers and Figure 1
@@ -41,6 +43,18 @@ The script prints the numbers quoted in the note and writes `fig_m1m2.pdf` and
 `gaiadr3-zeropoint` is optional. Without it, the script uses the zero point stored in
 `inputs.csv`, and the output is identical. The Monte Carlo uses 100,000 draws and a fixed
 random seed, so the numbers are exactly reproducible. It runs in a few seconds.
+
+## MIST track masses
+
+```
+python j0008_hrd.py                 # downloads the MIST v1.2 [Fe/H] = -0.25 EEP tracks (~110 MB)
+python j0008_hrd.py /path/to/EEPS   # or use an already unpacked EEPS directory
+```
+
+This prints the MIST track masses quoted in the note (interpolated at the observed Teff, at
+fixed log g and at fixed luminosity for three distances) and writes `j0008_hrd.png`.
+
+## Rebuilding the note
 
 To rebuild the note, copy `fig_m1m2.pdf` into `paper/` and compile `rnaas_j0008.tex` with
 AASTeX v7.0.1 (`aastex701.cls`, available from the AAS and on Overleaf).

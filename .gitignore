@@ -10,3 +10,6 @@ __pycache__/
 *.fdb_latexmk
 *.synctex.gz
 *.cls
+
+# MIST tracks downloaded by j0008_hrd.py
+MIST_v1.2_*
