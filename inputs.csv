@@ -1,0 +1,39 @@
+quantity,value,lower,upper,unit,source
+mass_function,0.587,0.570,0.604,Msun,Zhao et al. 2026 (The Joker value; 1-sigma range from the joint-fit K1 = 16.74 +/- 0.16 km/s)
+inclination,73,62,84,deg,Zhao et al. 2026 (Table 1; 1-sigma incl. systematic)
+P_orb,1218,1215,1221,d,Zhao et al. 2026 (Table 1)
+K1,16.75,16.72,16.78,km/s,Zhao et al. 2026 (The Joker fit)
+M1_Zhao_adopted,1.67,1.52,1.82,Msun,Zhao et al. 2026 (Bayesian combination of five gR^2/G masses)
+M2_Zhao_adopted,2.20,2.07,2.34,Msun,Zhao et al. 2026 (Bayesian combination of five companion masses)
+M1_Zhao_APOGEE_DR17,1.46,1.22,1.75,Msun,Zhao et al. 2026 (Methods; gR^2/G)
+M1_Zhao_APOGEE_SDSSV,1.64,1.39,1.93,Msun,Zhao et al. 2026 (Methods; gR^2/G)
+M1_Zhao_LAMOST_LRS_LASP,1.97,1.61,2.41,Msun,Zhao et al. 2026 (Methods; gR^2/G)
+M1_Zhao_LAMOST_LRS_DDPayne,2.11,1.65,2.70,Msun,Zhao et al. 2026 (Methods; gR^2/G)
+M1_Zhao_LAMOST_MRS_LASP,1.68,1.31,2.15,Msun,Zhao et al. 2026 (Methods; gR^2/G)
+M2_Zhao_APOGEE_DR17,2.04,1.82,2.34,Msun,Zhao et al. 2026 (Table 1)
+M2_Zhao_APOGEE_SDSSV,2.15,1.93,2.46,Msun,Zhao et al. 2026 (Table 1)
+M2_Zhao_LAMOST_LRS_LASP,2.35,2.07,2.70,Msun,Zhao et al. 2026 (Table 1)
+M2_Zhao_LAMOST_LRS_DDPayne,2.43,2.09,2.83,Msun,Zhao et al. 2026 (Table 1)
+M2_Zhao_LAMOST_MRS_LASP,2.18,1.88,2.54,Msun,Zhao et al. 2026 (Table 1)
+M1_Zhao_MIST,1.48,1.33,1.63,Msun,Zhao et al. 2026 (MIST; 1.45 and 1.52 +/-0.13)
+M1_DistMass,1.22,1.07,1.37,Msun,APOGEE DR17 DistMass (Stone-Martinez et al. 2024); 12% scatter
+M1_StarHorse,1.15,1.11,1.20,Msun,APOGEE DR17 StarHorse VAC (mass16/50/84; percentiles poorly sampled so not plotted)
+M1_FLAME,1.85,1.80,1.92,Msun,Gaia DR3 astrophysical_parameters mass_flame
+radius_FLAME,5.0747,,,Rsun,Gaia DR3 astrophysical_parameters radius_flame
+lum_FLAME,15.244,,,Lsun,Gaia DR3 astrophysical_parameters lum_flame
+M1_adopted_this_note,1.20,1.05,1.35,Msun,This note
+R1_SED,5.39,5.15,5.63,Rsun,Zhao et al. 2026 (SED fit at 1464.6 pc)
+logg_APOGEE,3.143929,3.119447,3.168411,dex,APOGEE DR17 ASPCAP
+logg_err_calibrated,0.07,,,dex,Zhao et al. 2026 (Table S2; APOGEE DR17 calibrated uncertainty)
+Teff_APOGEE,4955.316,,,K,APOGEE DR17 ASPCAP
+M_H_APOGEE,-0.257,,,dex,APOGEE DR17 ASPCAP
+C_Fe_APOGEE,-0.013652,,,dex,APOGEE DR17 ASPCAP
+N_Fe_APOGEE,0.16286,,,dex,APOGEE DR17 ASPCAP
+parallax_DR3,0.6828263939,0.6528609839,0.7127918039,mas,Gaia DR3 gaia_source
+parallax_zero_point_L21,-0.023378,,,mas,Lindegren et al. 2021 via gaiadr3-zeropoint 0.1.0 (recomputed if installed)
+G_DR3,12.692175,,,mag,Gaia DR3 gaia_source
+nu_eff_DR3,1.4917947,,,um^-1,Gaia DR3 gaia_source
+ecl_lat_DR3,0.5631323807,,,deg,Gaia DR3 gaia_source
+astrometric_params_solved,31,,,,Gaia DR3 gaia_source
+dist_DistMass_spec,1296.005,1210.031,1381.979,pc,APOGEE DR17 DistMass
+dist_StarHorse,1323.628,1271.154,1415.447,pc,APOGEE DR17 StarHorse VAC (dist16/50/84)

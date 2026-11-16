@@ -1,0 +1,5 @@
+# Tested with numpy 1.26.0, scipy 1.11.4, matplotlib 3.10.8, gaiadr3-zeropoint 0.1.0 (Python 3.11)
+numpy>=1.24
+scipy>=1.10
+matplotlib>=3.7
+gaiadr3-zeropoint>=0.1.0  # optional; the stored zero point in inputs.csv is used without it

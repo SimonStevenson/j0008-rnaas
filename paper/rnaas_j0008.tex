@@ -1,0 +1,90 @@
+%% RNAAS comment on Zhao et al. (2026), J0008+0128
+%% Compile with AASTeX v7.0.1 (aastex701.cls). No line numbers for RNAAS.
+\documentclass{aastex701}
+
+\newcommand{\msun}{\ensuremath{M_\odot}}
+\newcommand{\rsun}{\ensuremath{R_\odot}}
+\newcommand{\teff}{\ensuremath{T_{\rm eff}}}
+\newcommand{\logg}{\ensuremath{\log g}}
+
+\shorttitle{The companion of J0008+0128 need not be supermassive}
+\shortauthors{Stevenson}
+
+\begin{document}
+
+\title{The dark companion of J0008+0128 need not be a supermassive neutron star}
+
+\author[orcid=0000-0002-6100-537X]{Simon Stevenson}
+\affiliation{Centre for Astrophysics and Supercomputing, Swinburne University of Technology, Hawthorn, VIC 3122, Australia}
+\email[show]{spstevenson@swin.edu.au}
+
+\begin{abstract}
+\citet{Zhao2026} report J0008+0128 (Gaia DR3 2546630699873483008), a red giant in a 1218\,d orbit with a dark companion of $2.20^{+0.14}_{-0.13}$\,\msun, which they interpret as a likely supermassive neutron star. The mass function is precise, so the adopted giant mass, $M_1=1.67\pm0.15$\,\msun, sets the central value of the companion mass and the inclination sets its upper tail. The quoted uncertainties on both masses treat five estimates that share one radius and one inclination as independent, so they are too small. Two APOGEE DR17 value-added catalogues give a lighter giant: 1.22\,\msun\ from carbon and nitrogen abundances (DistMass) and 1.15\,\msun\ from isochrones (StarHorse). With $M_1=1.20\pm0.15$\,\msun\ the companion is $1.85^{+0.27}_{-0.16}$\,\msun, with probabilities of 27\% and 8\% of exceeding 2.0 and 2.3\,\msun. That is comparable to Gaia NS1 and does not require a supermassive neutron star.
+\end{abstract}
+
+%% UAT keywords verified: Neutron stars (1108), Stellar masses (1614)
+\keywords{\uat{Neutron stars}{1108} --- \uat{Stellar masses}{1614}}
+
+\section{What sets the companion mass}
+
+\citet{Zhao2026} fit radial velocities from 27 APOGEE, LAMOST and NOT spectra and find $P=1218\pm3$\,d, $e=0.09\pm0.01$ and $K_1=16.75$\,km\,s$^{-1}$.
+The single-lined spectroscopic orbit from Gaia DR3 agrees, and the $K_1$ uncertainty in their joint fit ($\pm0.16$\,km\,s$^{-1}$) gives $f(M)=0.587\pm0.017$\,\msun.
+A joint fit to the Gaia DR2 and DR3 five-parameter solutions gives $i=73^\circ\pm11^\circ$.
+
+At $i=73^\circ$, $M_2$ rises by about 0.6\,\msun\ for every 1\,\msun\ added to $M_1$, so the spread of published and catalogue giant masses (about 0.5\,\msun; Section~\ref{sec:m1}) moves the central value of $M_2$ by about 0.3\,\msun. The inclination sets the upper tail: across $62$--$84^\circ$ it changes $M_2$ by $+0.26/{-0.12}$\,\msun. \citet{Zhao2026} adopt $M_1=1.67\pm0.15$\,\msun, a Bayesian combination of five values of $gR^2/G$ that use \logg\ from different pipelines and $R=5.39$\,\rsun\ from a spectral energy distribution fit at their distance of 1465\,pc. They combine the five corresponding companion masses in the same way to obtain $M_2=2.20^{+0.14}_{-0.13}$\,\msun.
+
+Both adopted values match the inverse-variance weighted means of the five inputs ($1.67\pm0.15$ and $2.20\pm0.13$\,\msun), which assumes that the inputs are independent. They are not: all five giant masses share one radius, and all five companion masses also share one inclination, whose uncertainty cannot average down. Propagating $M_1=1.67\pm0.15$\,\msun\ and $i=73^\circ\pm11^\circ$ directly gives $M_2=2.15^{+0.30}_{-0.16}$\,\msun, with a 28\% chance of exceeding 2.3\,\msun.
+
+\section{Independent estimates favour $M_1\approx1.2$\,\msun} \label{sec:m1}
+
+The APOGEE DR17 \citep{Abdurrouf2022} ASPCAP labels for 2M00080122+0128582 are $\teff=4955$\,K, $\logg=3.144\pm0.024$, [M/H]$\,=-0.26$, [C/Fe]$\,=-0.01$ and [N/Fe]$\,=+0.16$, so [C/N]$\,=-0.18$ (S/N\,$=315$). DistMass \citep{StoneMartinez2024}, a neural network trained on asteroseismic masses using \teff, \logg, [M/H], [C/Fe] and [N/Fe], gives $M_1=1.22\pm0.15$\,\msun\ without using a distance; I quote its stated 12\% scatter rather than its 0.10\,\msun\ statistical error. StarHorse \citep{Queiroz2018,Queiroz2023}, which fits isochrones using the Gaia parallax, gives 1.15\,\msun\ at 1.32\,kpc. Its catalogue percentiles for this star are poorly sampled (the 5th and 16th distance percentiles are identical), so I do not use its quoted range. For comparison, \citet{Zhao2026} obtain 1.45--1.52 ($\pm0.13$)\,\msun\ from MIST isochrones.
+
+The $gR^2/G$ mass scales as $d^2$ at fixed \logg. With the APOGEE gravity it gives $M_1=1.48$\,\msun\ at 1465\,pc (cf.\ 1.46\,\msun\ in \citealt{Zhao2026}) and 1.16--1.21\,\msun\ at the 1.30--1.32\,kpc preferred by DistMass and StarHorse. The calibrated \logg\ values in Table S2 of \citet{Zhao2026} are $3.14\pm0.07$ (APOGEE DR17), $3.19\pm0.06$ (APOGEE SDSS-V), $3.20\pm0.10$ (LAMOST MRS), and $3.27\pm0.08$ and $3.30\pm0.10$ (LAMOST low resolution). Their adopted 1.67\,\msun\ therefore requires both the larger distance and the higher gravities from the low-resolution LAMOST spectra.
+
+Their distance also omits the parallax zero point. The value of 1464.6\,pc is exactly $1/\varpi$ for the Gaia DR3 parallax ($\varpi=0.6828\pm0.0300$\,mas), and their fitted parallax offset is $0.00\pm0.03$\,mas. For this star ($G=12.69$, $\nu_{\rm eff}=1.492\,\mu$m$^{-1}$, $\beta=0.56^\circ$, five-parameter solution) the \citet{Lindegren2021} correction is $-0.023$\,mas. Applying it gives $1.416\pm0.060$\,kpc, consistent with \citet{BailerJones2021}, and lowers the $gR^2/G$ giant mass to $M_1=1.38\pm0.26$\,\msun\ (using the calibrated \logg\ uncertainty of 0.07\,dex).
+
+Gaia DR3 FLAME gives $M_1=1.85$ (1.80--1.92)\,\msun, $R=5.07$\,\rsun\ and an age of 1.46\,Gyr. FLAME fits luminosity and \teff\ to solar-metallicity BaSTI tracks \citep{Creevey2023}. For a giant at [M/H]$\,=-0.26$ that prior should bias the mass high, because a metal-poor giant is hotter than a solar-metallicity one of the same mass. Its luminosity and radius also imply $\teff\approx5060$\,K, 110\,K hotter than APOGEE, which would raise the mass further. The age is also below the 1.5\,Gyr limit \citet{Fouesneau2023} recommend for trusting giant FLAME masses. FLAME's own radius, combined with the APOGEE \logg, gives $M_1=1.31$\,\msun.
+
+The older \citet{Martig2016} [C/N] calibration gives $M_1=1.22$\,\msun\ from abundances alone and 1.76\,\msun\ with \teff\ and \logg\ terms. The latter changes by about 0.4\,\msun\ per 100\,K and was trained on the DR12 temperature scale, so I prefer DistMass, which was trained on DR17.
+
+\section{Revised companion mass}
+
+Taking $M_1=1.20\pm0.15$\,\msun\ (the rounded midpoint of the DistMass, StarHorse and catalogue-distance $gR^2/G$ values, 1.15--1.22\,\msun, with the 12\% DistMass scatter as its uncertainty), $i=73^\circ\pm11^\circ$ and $f(M)=0.587\pm0.017$\,\msun\ with Gaussian errors, a Monte Carlo through the mass function gives $M_2=1.85^{+0.27}_{-0.16}$\,\msun\ (5--95\%: 1.61--2.43\,\msun). $P(M_2>2.0\,\msun)=0.27$ and $P(M_2>2.3\,\msun)=0.08$, where 2\,\msun\ is the threshold \citet{Zhao2026} use for a supermassive neutron star and 2.15--2.3\,\msun\ is the range of maximum non-rotating neutron star masses they quote. Almost all draws above 2.3\,\msun\ have $i<62^\circ$. The minimum mass, at $i=90^\circ$, is 1.70\,\msun\ (Figure~\ref{fig:m1m2}). The conclusion does not rest on the lowest giant mass: $M_1=1.30\pm0.20$\,\msun\ gives $P(M_2>2.3\,\msun)=0.11$, and the parallax-based $M_1=1.38\pm0.26$\,\msun\ gives 0.15, compared with 0.28 for $M_1=1.67\pm0.15$\,\msun.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=0.6\textwidth]{fig_m1m2.pdf}
+\caption{Top: companion mass against giant mass for $f(M)=0.587$\,\msun\ at $i=73^\circ$ (solid), $62$--$84^\circ$ (band) and $90^\circ$ (dashed). The grey band is the maximum neutron star mass. Shaded columns mark $M_1=1.20\pm0.15$\,\msun\ (blue, this note) and $1.67\pm0.15$\,\msun\ (orange, \citealt{Zhao2026}); points give $M_2$ at $i=73^\circ$. Bottom: individual giant-mass estimates (Section~\ref{sec:m1}). The black point is $gR^2/G$ at the zero-point-corrected parallax distance, the grey point is Gaia FLAME, which assumes solar metallicity, and StarHorse has no error bar because its catalogue percentiles are poorly sampled.\label{fig:m1m2}}
+\end{figure}
+
+\section{Caveats and conclusion}
+
+DistMass and StarHorse both start from the ASPCAP \teff, \logg\ and [M/H], so they are not fully independent of each other, though both are independent of the LAMOST gravities and the joint-fit distance. Material accreted from the envelope of the neutron star's progenitor would probably be nitrogen-rich, which biases the [C/N] mass upward (in the \citealt{Martig2016} fit, +0.05\,dex in [N/M] adds about 0.05\,\msun), so the true giant mass would be lower than 1.22\,\msun. StarHorse uses the Gaia parallax, which an unmodelled 1218\,d orbit could bias; the DistMass spectroscopic distance ($1.30\pm0.09$\,kpc) does not, and the two agree. The tension with 1.42--1.46\,kpc is only about 1--1.5$\sigma$, so I give more weight to the distance-independent [C/N] mass. Adopting the parallax distance instead still gives $M_2=1.95$\,\msun\ ($M_1=1.38$\,\msun, zero-point corrected) or 2.02\,\msun\ ($M_1=1.48$\,\msun, uncorrected) at $i=73^\circ$, below the maximum neutron star mass. A lower $M_1$ also lowers the total mass of any unresolved inner compact binary, but cannot distinguish that interpretation from a single neutron star.
+
+The orbit of J0008+0128 is well determined, but the companion mass depends on the adopted giant mass and the inclination, and its quoted uncertainty is too small. Public DR17 estimates favour $M_1\approx1.2$\,\msun, giving $M_2\approx1.9$\,\msun: a heavy neutron star in a wide, nearly circular orbit, much like Gaia NS1 \citep{ElBadry2024}, rather than a supermassive one in the mass gap. Gaia DR4 epoch astrometry, fitting the orbit and parallax together, will settle the distance and hence the giant's radius and mass.
+
+\begin{contribution}
+AI disclosure: I used Claude (Anthropic; Claude Opus 5.5) to assist with retrieving and cross-checking catalogue values, the parallax zero-point and Monte Carlo calculations, the code for Figure~\ref{fig:m1m2}, and drafting the text. I checked all inputs against the original catalogues and papers, verified the calculations, and take full responsibility for the content.
+\end{contribution}
+
+%% TODO: create repo SimonStevenson/j0008-rnaas and add Zenodo DOI
+The code and input values used for the calculations and Figure~\ref{fig:m1m2} are available at \url{https://github.com/SimonStevenson/j0008-rnaas} (archived on Zenodo: DOI TBD).
+
+\software{NumPy, SciPy, Matplotlib, gaiadr3-zeropoint}
+
+%% All references checked against ADS or publisher records
+\begin{thebibliography}{}
+\bibitem[Abdurro'uf et al.(2022)]{Abdurrouf2022} Abdurro'uf, et al. 2022, ApJS, 259, 35
+\bibitem[Bailer-Jones et al.(2021)]{BailerJones2021} Bailer-Jones, C.~A.~L., et al. 2021, AJ, 161, 147
+\bibitem[Creevey et al.(2023)]{Creevey2023} Creevey, O.~L., et al. 2023, A\&A, 674, A26
+\bibitem[El-Badry et al.(2024)]{ElBadry2024} El-Badry, K., et al. 2024, OJAp, 7, 27
+\bibitem[Fouesneau et al.(2023)]{Fouesneau2023} Fouesneau, M., et al. 2023, A\&A, 674, A28
+\bibitem[Lindegren et al.(2021)]{Lindegren2021} Lindegren, L., et al. 2021, A\&A, 649, A4
+\bibitem[Martig et al.(2016)]{Martig2016} Martig, M., et al. 2016, MNRAS, 456, 3655
+\bibitem[Queiroz et al.(2018)]{Queiroz2018} Queiroz, A.~B.~A., et al. 2018, MNRAS, 476, 2556
+\bibitem[Queiroz et al.(2023)]{Queiroz2023} Queiroz, A.~B.~A., et al. 2023, A\&A, 673, A155
+\bibitem[Stone-Martinez et al.(2024)]{StoneMartinez2024} Stone-Martinez, A., et al. 2024, AJ, 167, 73
+\bibitem[Zhao et al.(2026)]{Zhao2026} Zhao, X., et al. 2026, SciA, 12, eaeg3307
+\end{thebibliography}
+
+\end{document}
