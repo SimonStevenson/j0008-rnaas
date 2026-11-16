@@ -28,7 +28,7 @@
 
 \section{What sets the companion mass}
 
-\citet{Zhao2026} fit radial velocities from 27 APOGEE, LAMOST and NOT spectra and find $P=1218\pm3$\,d, $e=0.09\pm0.01$ and $K_1=16.75$\,km\,s$^{-1}$.
+\citet{Zhao2026} fit radial velocities and find $P=1218\pm3$\,d, $e=0.09\pm0.01$ and $K_1=16.75$\,km\,s$^{-1}$.
 The single-lined spectroscopic orbit from Gaia DR3 agrees, and the $K_1$ uncertainty in their joint fit ($\pm0.16$\,km\,s$^{-1}$) gives $f(M)=0.587\pm0.017$\,\msun.
 A joint fit to the Gaia DR2 and DR3 five-parameter solutions gives $i=73^\circ\pm11^\circ$.
 
@@ -38,13 +38,13 @@ Both adopted values match the inverse-variance weighted means of the five inputs
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=0.6\textwidth]{fig_m1m2.pdf}
-\caption{Top: companion mass against giant mass for $f(M)=0.587$\,\msun\ at $i=73^\circ$ (solid), $62$--$84^\circ$ (band) and $90^\circ$ (dashed). The grey band is the maximum neutron star mass. Shaded columns mark $M_1=1.20\pm0.15$\,\msun\ (blue, this note) and $1.67\pm0.15$\,\msun\ (orange, \citealt{Zhao2026}); points give $M_2$ at $i=73^\circ$. Bottom: individual giant-mass estimates (Section~\ref{sec:m1}). The black point is $gR^2/G$ at the zero-point-corrected parallax distance, the grey point is Gaia FLAME, which assumes solar metallicity, and StarHorse has no error bar because its catalogue percentiles are poorly sampled.\label{fig:m1m2}}
+\includegraphics[width=0.56\textwidth]{fig_m1m2.pdf}
+\caption{Top: companion mass against giant mass for $f(M)=0.587$\,\msun\ at $i=73^\circ$ (solid), $62$--$84^\circ$ (band) and $90^\circ$ (dashed). The grey band is the maximum neutron star mass. Shaded columns mark $M_1=1.20\pm0.15$\,\msun\ (blue, this note) and $1.67\pm0.15$\,\msun\ (orange, \citealt{Zhao2026}); points give $M_2$ at $i=73^\circ$. Bottom: individual giant-mass estimates (Section~\ref{sec:m1}). The black point is $gR^2/G$ at the zero-point-corrected parallax distance, the grey point is Gaia FLAME, which assumes solar metallicity, and StarHorse has no error bar.\label{fig:m1m2}}
 \end{figure}
 
 \section{Independent estimates favour $M_1\approx1.2$\,\msun} \label{sec:m1}
 
-The APOGEE DR17 \citep{Abdurrouf2022} ASPCAP labels for 2M00080122+0128582 are $\teff=4955$\,K, $\logg=3.144\pm0.024$, [M/H]$\,=-0.26$, [C/Fe]$\,=-0.01$ and [N/Fe]$\,=+0.16$, so [C/N]$\,=-0.18$ (S/N\,$=315$). DistMass \citep{StoneMartinez2024}, a neural network trained on asteroseismic masses using \teff, \logg, [M/H], [C/Fe] and [N/Fe], gives $M_1=1.22\pm0.15$\,\msun\ without using a distance; I quote its stated 12\% scatter rather than its 0.10\,\msun\ statistical error. StarHorse \citep{Queiroz2018,Queiroz2023}, which fits isochrones using the Gaia parallax, gives 1.15\,\msun\ at 1.32\,kpc. Its catalogue percentiles for this star are poorly sampled (the 5th and 16th distance percentiles are identical), so I do not use its quoted range. For comparison, \citet{Zhao2026} obtain 1.45--1.52 ($\pm0.13$)\,\msun\ from MIST isochrones. Interpolating the MIST tracks \citep{Dotter2016,Choi2016} at [Fe/H]$\,=-0.25$ gives $M_1=1.29$\,\msun\ from the calibrated $\teff=4964\pm40$\,K (Table S2) and \logg\ alone (1.14--1.46\,\msun\ across the \teff\ uncertainty), and 1.30\,\msun\ on the HR diagram at the zero-point-corrected parallax distance; at about 0.4\,\msun\ per 100\,K, isochrone masses for this star depend strongly on the temperature scale.
+The APOGEE DR17 \citep{Abdurrouf2022} ASPCAP labels for 2M00080122+0128582 are $\teff=4955$\,K, $\logg=3.144\pm0.024$, [M/H]$\,=-0.26$, [C/Fe]$\,=-0.01$ and [N/Fe]$\,=+0.16$, so [C/N]$\,=-0.18$ (S/N\,$=315$). DistMass \citep{StoneMartinez2024}, a neural network trained on asteroseismic masses using \teff, \logg, [M/H], [C/Fe] and [N/Fe], gives $M_1=1.22\pm0.15$\,\msun\ without using a distance; I quote its stated 12\% scatter rather than its 0.10\,\msun\ statistical error. StarHorse \citep{Queiroz2018,Queiroz2023}, which fits isochrones using the Gaia parallax, gives 1.15\,\msun\ at 1.32\,kpc. Its catalogue percentiles for this star are poorly sampled, so I do not use its quoted range. For comparison, \citet{Zhao2026} obtain 1.45--1.52 ($\pm0.13$)\,\msun\ from MIST isochrones. Interpolating the MIST tracks \citep{Dotter2016,Choi2016} at [Fe/H]$\,=-0.25$ gives $M_1=1.29$\,\msun\ from the calibrated $\teff=4964\pm40$\,K (Table S2) and \logg\ alone (1.14--1.46\,\msun\ across the \teff\ uncertainty), and 1.30\,\msun\ on the HR diagram at the zero-point-corrected parallax distance; at about 0.4\,\msun\ per 100\,K, isochrone masses for this star depend strongly on the temperature scale.
 
 The $gR^2/G$ mass scales as $d^2$ at fixed \logg. With the APOGEE gravity it gives $M_1=1.48$\,\msun\ at 1465\,pc (cf.\ 1.46\,\msun\ in \citealt{Zhao2026}) and 1.16--1.21\,\msun\ at the 1.30--1.32\,kpc preferred by DistMass and StarHorse. The calibrated \logg\ values in Table S2 of \citet{Zhao2026} are $3.14\pm0.07$ (APOGEE DR17), $3.19\pm0.06$ (APOGEE SDSS-V), $3.20\pm0.10$ (LAMOST MRS), and $3.27\pm0.08$ and $3.30\pm0.10$ (LAMOST low resolution). Their adopted 1.67\,\msun\ therefore requires both the larger distance and the higher gravities from the low-resolution LAMOST spectra.
 
@@ -52,11 +52,11 @@ Their distance also omits the parallax zero point. The value of 1464.6\,pc is ex
 
 Gaia DR3 FLAME gives $M_1=1.85$ (1.80--1.92)\,\msun, $R=5.07$\,\rsun\ and an age of 1.46\,Gyr. FLAME fits luminosity and \teff\ to solar-metallicity BaSTI tracks \citep{Creevey2023}. For a giant at [M/H]$\,=-0.26$ that prior should bias the mass high, because a metal-poor giant is hotter than a solar-metallicity one of the same mass. Its luminosity and radius also imply $\teff\approx5060$\,K, 110\,K hotter than APOGEE; at that temperature and the APOGEE \logg, the MIST tracks give $M_1=1.70$\,\msun\ rather than 1.29\,\msun. The age is also below the 1.5\,Gyr limit \citet{Fouesneau2023} recommend for trusting giant FLAME masses. FLAME's own radius, combined with the APOGEE \logg, gives $M_1=1.31$\,\msun.
 
-The older \citet{Martig2016} [C/N] calibration gives $M_1=1.22$\,\msun\ from abundances alone and 1.76\,\msun\ with \teff\ and \logg\ terms. The latter changes by about 0.4\,\msun\ per 100\,K and was trained on the DR12 temperature scale, so I prefer DistMass, which was trained on DR17.
+The older \citet{Martig2016} [C/N] calibration gives $M_1=1.22$\,\msun\ from abundances alone and 1.76\,\msun\ with \teff\ and \logg\ terms. The latter is very sensitive to \teff\ and was trained on the DR12 scale, so I prefer DistMass, trained on DR17.
 
 \section{Revised companion mass}
 
-Taking $M_1=1.20\pm0.15$\,\msun\ (the rounded midpoint of the DistMass, StarHorse and catalogue-distance $gR^2/G$ values, 1.15--1.22\,\msun, with the 12\% DistMass scatter as its uncertainty), $i=73^\circ\pm11^\circ$ and $f(M)=0.587\pm0.017$\,\msun\ with Gaussian errors, a Monte Carlo through the mass function gives $M_2=1.85^{+0.27}_{-0.16}$\,\msun\ (5--95\%: 1.61--2.43\,\msun). $P(M_2>2.0\,\msun)=0.27$ and $P(M_2>2.3\,\msun)=0.08$, where 2\,\msun\ is the threshold \citet{Zhao2026} use for a supermassive neutron star and 2.15--2.3\,\msun\ is the range of maximum non-rotating neutron star masses they quote. Almost all draws above 2.3\,\msun\ have $i<62^\circ$. The minimum mass, at $i=90^\circ$, is 1.70\,\msun\ (Figure~\ref{fig:m1m2}). The conclusion does not rest on the lowest giant mass: $M_1=1.30\pm0.20$\,\msun\ gives $P(M_2>2.3\,\msun)=0.11$, and the parallax-based $M_1=1.38\pm0.26$\,\msun\ gives 0.15, compared with 0.28 for $M_1=1.67\pm0.15$\,\msun.
+Taking $M_1=1.20\pm0.15$\,\msun\ (the rounded midpoint of the DistMass, StarHorse and catalogue-distance $gR^2/G$ values, 1.15--1.22\,\msun, with the 12\% DistMass scatter as its uncertainty), $i=73^\circ\pm11^\circ$ and $f(M)=0.587\pm0.017$\,\msun\ with Gaussian errors, a Monte Carlo through the mass function gives $M_2=1.85^{+0.27}_{-0.16}$\,\msun\ (5--95\%: 1.61--2.43\,\msun). $P(M_2>2.0\,\msun)=0.27$ and $P(M_2>2.3\,\msun)=0.08$, where 2\,\msun\ is the threshold \citet{Zhao2026} use for a supermassive neutron star and 2.15--2.3\,\msun\ is the range of maximum non-rotating neutron star masses they quote. Almost all draws above 2.3\,\msun\ have $i<62^\circ$. The minimum mass, at $i=90^\circ$, is 1.70\,\msun\ (Figure~\ref{fig:m1m2}). The conclusion does not rest on the lowest giant mass: $M_1=1.30\pm0.20$\,\msun\ gives $P(M_2>2.3\,\msun)=0.11$, and the parallax-based $M_1=1.38\pm0.26$\,\msun\ gives 0.15, compared with 0.28 for $M_1=1.67\pm0.15$\,\msun. These $M_2$ values assume no prior on the neutron star mass; a population prior \citep{Farr2020} would lower them further.
 
 \section{Caveats and conclusion}
 
@@ -85,6 +85,7 @@ The code and input values used for the calculations and Figure~\ref{fig:m1m2} ar
 \bibitem[Creevey et al.(2023)]{Creevey2023} Creevey, O.~L., et al. 2023, A\&A, 674, A26
 \bibitem[Dotter(2016)]{Dotter2016} Dotter, A. 2016, ApJS, 222, 8
 \bibitem[El-Badry et al.(2024)]{ElBadry2024} El-Badry, K., et al. 2024, OJAp, 7, 27
+\bibitem[Farr \& Chatziioannou(2020)]{Farr2020} Farr, W.~M., \& Chatziioannou, K. 2020, RNAAS, 4, 65
 \bibitem[Fouesneau et al.(2023)]{Fouesneau2023} Fouesneau, M., et al. 2023, A\&A, 674, A28
 \bibitem[Lindegren et al.(2021)]{Lindegren2021} Lindegren, L., et al. 2021, A\&A, 649, A4
 \bibitem[Martig et al.(2016)]{Martig2016} Martig, M., et al. 2016, MNRAS, 456, 3655
