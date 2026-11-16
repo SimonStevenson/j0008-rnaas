@@ -4,6 +4,9 @@ Paper and code for Stevenson (2026, RNAAS, in prep.), a comment on Zhao et al. (
 Science Advances, 12, eaeg3307) about the red giant plus dark companion binary J0008+0128
 (Gaia DR3 2546630699873483008).
 
+Archived on Zenodo: [doi:10.5281/zenodo.24293381](https://doi.org/10.5281/zenodo.24293381)
+(this DOI covers all versions). `CITATION.cff` gives the citation details.
+
 ## Contents
 
 | Path | What it is |

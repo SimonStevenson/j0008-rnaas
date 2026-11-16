@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite it as below."
+title: "Code and paper for: The dark companion of J0008+0128 need not be a supermassive neutron star"
+type: software
+abstract: >-
+  Paper and code for a Research Note of the AAS commenting on Zhao et al. (2026,
+  Science Advances, 12, eaeg3307) about the red giant plus dark companion binary
+  J0008+0128. j0008_analysis.py reproduces every number in the note and its figure
+  from the values in inputs.csv; j0008_hrd.py gives the MIST track masses.
+authors:
+  - given-names: Simon
+    family-names: Stevenson
+    affiliation: "Centre for Astrophysics and Supercomputing, Swinburne University of Technology"
+    orcid: "https://orcid.org/0000-0002-6100-537X"
+doi: 10.5281/zenodo.24293381
+repository-code: "https://github.com/SimonStevenson/j0008-rnaas"
+license: MIT
+keywords:
+  - neutron stars
+  - stellar masses
+  - binary stars
+  - Gaia
