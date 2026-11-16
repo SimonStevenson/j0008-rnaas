@@ -33,6 +33,7 @@ LOGG, LOGG_ERR = 3.14, 0.07
 TSUN = 5772.0
 R_PAPER, D_PAPER = 5.39, 1464.56  # Rsun at pc
 TEFF_SED = 4929.0  # Teff of the SED fit that gave R_PAPER; L = R^2 Teff^4 uses this pair
+TEFF_FLAME = 5063.0  # Teff implied by the Gaia DR3 FLAME luminosity and radius (15.244 Lsun, 5.0747 Rsun)
 DISTANCES = [  # (pc, 1-sigma pc, label, colour)
     (1296.0, 86.0, "spectroscopic 1.30 kpc", "#2a78d6"),
     (1416.0, 60.0, "ZP-corrected parallax 1.42 kpc", "#1baf7a"),
@@ -137,6 +138,8 @@ def main():
     lo_hi = lambda col, x: [track_mass(tracks, col, x, TEFF + s * TEFF_ERR) for s in (1, 0, -1)]
     hi_m, mid, lo_m = lo_hi("log_g", LOGG)
     print(f"  Kiel, log g = {LOGG}: M = {mid:.2f} ({lo_m:.2f}-{hi_m:.2f}) Msun")
+    print(f"  Kiel, log g = {LOGG}, at the FLAME Teff of {TEFF_FLAME:.0f} K: "
+          f"M = {track_mass(tracks, 'log_g', LOGG, TEFF_FLAME):.2f} Msun")
     for d, _, lab, _ in DISTANCES:
         hi_m, mid, lo_m = lo_hi("log_L", np.log10(lum_at(d)))
         print(f"  HR, {lab} (log L = {np.log10(lum_at(d)):.2f}): "
