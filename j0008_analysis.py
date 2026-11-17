@@ -182,7 +182,7 @@ print(f"  std(M2): all {m2_s.std():.2f}; M1 varied alone {m2_vec(m1_s, 73.0).std
       f"i varied alone {m2_vec(1.20, inc_s).std():.2f} Msun")
 print(f"Minimum mass at i=90 deg for M1=1.20: {m2_from(1.20, 90):.2f} Msun")
 print("Robustness to the adopted M1:")
-for mu, sig, lab in ((1.30, 0.20, "broader M1"),
+for mu, sig, lab in ((1.30, 0.20, "MIST track masses, wider uncertainty"),
                      (round(m1_plx_mu, 2), round(m1_plx_sig, 2), "gR^2/G, ZP-corrected parallax"),
                      (1.67, 0.15, "Zhao et al. adopted M1")):
     print(f"  M1 = {mu:.2f} +/- {sig:.2f} ({lab}): {describe(draw(mu, sig)[2])}")
@@ -190,7 +190,7 @@ for m1_par, lab in ((1.38, "ZP-corrected parallax"), (1.48, "uncorrected paralla
     print(f"Parallax-based M1 = {m1_par} ({lab}) -> M2(i=73) = {m2_from(m1_par, 73):.2f} Msun")
 
 # ------------------------------------------------------------ Figure 1
-BLUE, ORANGE, INK, MUTED = "#2a78d6", "#eb6834", "#0b0b0b", "#52514e"
+BLUE, ORANGE, VIOLET, INK, MUTED = "#2a78d6", "#eb6834", "#6250d6", "#0b0b0b", "#52514e"
 plt.rcParams.update({"font.size": 8, "axes.edgecolor": MUTED, "axes.labelcolor": INK,
                      "xtick.color": MUTED, "ytick.color": MUTED})
 grid = np.linspace(0.95, 2.0, 200)
@@ -200,7 +200,7 @@ ax.axhspan(2.15, 2.30, color="#e4e3df", lw=0, zorder=0)
 ax.text(0.97, 2.225, r"max. NS mass (2.15–2.3 M$_\odot$)", va="center", fontsize=6.5, color=MUTED)
 ax.axvspan(1.05, 1.35, color=BLUE, alpha=0.12, lw=0, zorder=0)
 ax.axvspan(1.52, 1.82, color=ORANGE, alpha=0.12, lw=0, zorder=0)
-ax.fill_between(grid, m2_vec(grid, 84.0), m2_vec(grid, 62.0), color="#b7d3f6", alpha=0.55,
+ax.fill_between(grid, m2_vec(grid, 84.0), m2_vec(grid, 62.0), color=VIOLET, alpha=0.25,
                 lw=0, zorder=1)
 ax.plot(grid, m2_vec(grid, 73.0), color=INK, lw=1.2, zorder=2)
 ax.plot(grid, m2_vec(grid, 90.0), color=INK, lw=0.8, ls="--", zorder=2)
