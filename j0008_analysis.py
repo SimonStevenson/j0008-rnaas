@@ -211,8 +211,6 @@ ax.text(1.40, m2_from(1.40, 90) - 0.05, r"$i=90^\circ$ (minimum)", ha="left", va
 for m, col in ((1.20, BLUE), (1.67, ORANGE)):
     y = m2_from(m, 73)
     ax.plot(m, y, "o", ms=4.5, color=col, mec="white", mew=0.8, zorder=4)
-    ax.annotate(f"{y:.2f}", (m, y), xytext=(-5, 4), textcoords="offset points", ha="right",
-                fontsize=6.5, color=INK)
 ax.set_ylim(1.55, 2.6)
 ax.set_ylabel(r"Companion mass $M_2$ (M$_\odot$)")
 for s in ("top", "right"):
