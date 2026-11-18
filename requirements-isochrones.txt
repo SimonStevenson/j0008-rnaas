@@ -1,0 +1,11 @@
+# Separate environment for j0008_isochrones.py only (isochrones 2.1 needs numpy < 2, pandas < 2).
+# Tested with Python 3.11 on macOS (arm64).
+isochrones==2.1
+numpy==1.26.4
+pandas==1.5.3
+numba==0.59.1
+llvmlite==0.42.0
+scipy==1.17.1
+astropy==5.3.4
+tables==3.11.1
+emcee==3.1.6

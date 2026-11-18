@@ -244,3 +244,76 @@ fig.savefig(os.path.join(HERE, "fig_m1m2.pdf"), bbox_inches="tight",
             metadata={"CreationDate": None})  # no timestamp, so reruns give identical files
 fig.savefig(os.path.join(HERE, "fig_m1m2.png"), bbox_inches="tight")
 print("\nWrote fig_m1m2.pdf and fig_m1m2.png")
+
+# ------------------------------- Implied prior on M2 (a check; not quoted in the note)
+# Drawing (M1, i, f) and solving for M2 is equivalent to a posterior with priors on M1 and i,
+# a Gaussian likelihood on f, and an implied conditional prior on M2 proportional to
+#   df/dM2 = sin^3 i * M2^2 (M2 + 3 M1) / (M1 + M2)^3.
+# Importance weights pi_new(M2) / (df/dM2) give the posterior under other M2 priors. This
+# note's case reuses the Section 3 draws; Zhao et al.'s M1 = 1.67 +/- 0.15 takes new draws
+# here, after every number above, so nothing earlier changes.
+print("\n== Check: implied prior on M2 (not in the note) ==")
+
+
+def ns_pop(m, mmax=2.12):
+    """Neutron star mass distribution of Alsing, Silva & Berti (2018, MNRAS 478, 1377): two
+    Gaussians (1.34 +/- 0.07, 1.80 +/- 0.21; weight 0.65 in the first) with a sharp maximum mass."""
+    gauss = lambda x, mu, sig: np.exp(-0.5 * ((x - mu) / sig) ** 2) / (sig * np.sqrt(2 * np.pi))
+    return np.where(m < mmax, 0.65 * gauss(m, 1.34, 0.07) + 0.35 * gauss(m, 1.80, 0.21), 0.0)
+
+
+def prior_weights(m1, inc, m2):
+    dfdm2 = np.sin(np.radians(inc)) ** 3 * m2 ** 2 * (m2 + 3 * m1) / (m1 + m2) ** 3
+    return [("implied (as in the note)", np.ones_like(m2), BLUE),
+            ("flat in M2", 1 / dfdm2, MUTED),
+            ("NS population, Alsing+18", ns_pop(m2) / dfdm2, ORANGE)]
+
+
+def describe_w(m2, w):
+    w = w / w.sum()
+    order = np.argsort(m2)
+    p16, p50, p84 = np.interp([0.16, 0.5, 0.84], np.cumsum(w[order]), m2[order])
+    return (f"M2 = {p50:.2f} +{p84 - p50:.2f} -{p50 - p16:.2f} Msun; P(M2>2.0) = {w[m2 > 2.0].sum():.2f}, "
+            f"P(M2>2.3) = {w[m2 > 2.3].sum():.2f} (effective samples {1 / np.sum(w ** 2):,.0f})")
+
+
+m1_z, inc_z, m2_z = draw(1.67, 0.15)
+cases_m2 = [("this note", r"this note: $M_1=1.20\pm0.15$", m1_s, inc_s, m2_s),
+            ("Zhao et al. M1", r"Zhao et al.: $M_1=1.67\pm0.15$", m1_z, inc_z, m2_z)]
+for name, _, m1c, incc, m2c in cases_m2:
+    print(f" {name} (M1 = {m1c.mean():.2f}, i = 73 +/- 11 deg):")
+    for lab, w, _ in prior_weights(m1c, incc, m2c):
+        print(f"  {lab:26s} {describe_w(m2c, w)}")
+
+fig, axs = plt.subplots(1, 3, figsize=(9.6, 2.7), dpi=300, gridspec_kw={"wspace": 0.3})
+ax = axs[0]
+grid_m2 = np.linspace(1.2, 3.0, 300)
+for m1v, ls in ((1.20, "-"), (1.67, "--")):
+    g = grid_m2 ** 2 * (grid_m2 + 3 * m1v) / (m1v + grid_m2) ** 3
+    ax.plot(grid_m2, g / np.interp(2.0, grid_m2, g), ls, color=BLUE, lw=1.2,
+            label=rf"implied, $M_1={m1v:.2f}$, $i=73^\circ$")
+ax.axhline(1, color=MUTED, lw=0.8, label="flat")
+pop_g = ns_pop(grid_m2)
+ax.plot(grid_m2, pop_g / pop_g.max(), color=ORANGE, lw=1.2, label="NS population (peak = 1)")
+ax.set(xlabel=r"$M_2$ (M$_\odot$)", ylabel="prior density (relative)", ylim=(0, 1.6), title="priors on $M_2$")
+ax.title.set_fontsize(7)
+ax.legend(fontsize=5.5, frameon=False)
+bins = np.linspace(1.4, 3.2, 73)
+for bx, (_, title, m1c, incc, m2c) in zip(axs[1:], cases_m2):
+    bx.axvspan(2.15, 2.30, color="#e4e3df", lw=0, zorder=0)
+    for lab, w, col in prior_weights(m1c, incc, m2c):
+        bx.hist(m2c, bins=bins, weights=w / w.sum(), density=True, histtype="step", color=col, lw=1.2,
+                label=lab)
+    bx.set(xlabel=r"$M_2$ (M$_\odot$)", ylabel="posterior density", xlim=(1.4, 3.2))
+    bx.set_title(title + r", $i=73^\circ\pm11^\circ$", fontsize=7)
+xq = np.linspace(1.4, 3.2, 400)
+quoted = np.where(xq < 2.20, np.exp(-0.5 * ((xq - 2.20) / 0.13) ** 2), np.exp(-0.5 * ((xq - 2.20) / 0.14) ** 2))
+axs[2].plot(xq, quoted / np.trapz(quoted, xq), ":", color=INK, lw=1.0, label=r"quoted $2.20^{+0.14}_{-0.13}$")
+axs[1].legend(fontsize=5.5, frameon=False)
+axs[2].legend(fontsize=5.5, frameon=False)
+for a in axs:
+    for s_ in ("top", "right"):
+        a.spines[s_].set_visible(False)
+    a.tick_params(length=3, width=0.6)
+fig.savefig(os.path.join(HERE, "fig_m2_prior.png"), bbox_inches="tight")
+print("Wrote fig_m2_prior.png")

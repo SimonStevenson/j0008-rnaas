@@ -1,0 +1,2 @@
+source_id,ra,dec,l,b,parallax,parallax_error,phot_g_mean_mag,phot_g_mean_flux_over_error,phot_bp_mean_mag,phot_bp_mean_flux_over_error,phot_rp_mean_mag,phot_rp_mean_flux_over_error,designation,j_m,j_msigcom,h_m,h_msigcom,ks_m,ks_msigcom,ph_qual,ag_gspphot,ebpminrp_gspphot,azero_gspphot
+2546630699873483008,2.0051196306260044,1.4827993610005576,101.13389244171513,-59.53886354479738,0.6828263939122302,0.02996541,12.692175,4156.475,13.165074,1526.1102,12.057319,2491.6406,00080122+0128582,11.287,0.026,10.779,0.022,10.672,0.019,AAA,0.1632,0.0866,0.2036
