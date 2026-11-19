@@ -22,9 +22,10 @@ M1_StarHorse,1.15,1.11,1.20,Msun,APOGEE DR17 StarHorse VAC (mass16/50/84; percen
 M1_FLAME,1.85,1.80,1.92,Msun,Gaia DR3 astrophysical_parameters mass_flame
 radius_FLAME,5.0747,,,Rsun,Gaia DR3 astrophysical_parameters radius_flame
 lum_FLAME,15.244,,,Lsun,Gaia DR3 astrophysical_parameters lum_flame
-M1_adopted_this_note,1.20,1.05,1.35,Msun,This note
+M1_adopted_this_note,1.25,1.10,1.40,Msun,This note: APOKASC-3 seismic masses of giants with J0008's corrected parameters (medians 1.23-1.25; j0008_analysis.py)
 R1_SED,5.39,5.15,5.63,Rsun,Zhao et al. 2026 (SED fit at 1464.6 pc)
 logg_APOGEE,3.143929,3.119447,3.168411,dex,APOGEE DR17 ASPCAP
+logg_SDSSV_corr,3.19,3.13,3.25,dex,Zhao et al. 2026 (Table S2; APOGEE SDSS-V ASPCAP corrected)
 logg_err_calibrated,0.07,,,dex,Zhao et al. 2026 (Table S2; APOGEE DR17 calibrated uncertainty)
 Teff_APOGEE,4955.316,,,K,APOGEE DR17 ASPCAP
 M_H_APOGEE,-0.257,,,dex,APOGEE DR17 ASPCAP

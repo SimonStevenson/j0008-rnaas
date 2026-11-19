@@ -40,12 +40,18 @@ The script prints the numbers quoted in the note and writes `fig_m1m2.pdf` and
   inverse-variance means of their five estimates, and the companion mass you get by
   propagating M1 = 1.67 ± 0.15 Msun and i = 73 ± 11 deg directly
 - gR^2/G giant masses at different distances, including the zero-point-corrected parallax
-  distance with its uncertainty
+  distance with its uncertainty, with the APOGEE DR17 and SDSS-V log g
 - the Lindegren et al. (2021) parallax zero point for this star
 - the Teff implied by the Gaia FLAME luminosity and radius
 - Martig et al. (2016) [C/N] masses and their sensitivities
-- the Monte Carlo companion mass for M1 = 1.20 ± 0.15 Msun, i = 73 ± 11 deg and
+- APOKASC-3 (Pinsonneault et al. 2025) seismic masses of Kepler giants with J0008's parameters:
+  three broad selections (log g 3.0-3.3, [Fe/H] and [C/N] from -0.3 to 0), and boxes centred on each survey's
+  corrected parameters in Zhao et al. Table S2 (medians 1.23-1.26 Msun)
+- the Monte Carlo companion mass for M1 = 1.25 ± 0.15 Msun, i = 73 ± 11 deg and
   f(M) = 0.587 ± 0.017 Msun, and the same calculation for other choices of M1
+- the APOKASC-3 mass used as a prior and updated with J0008's own log g and zero-point-corrected
+  parallax (importance-weighted draws), giving M1 = 1.29 ± 0.13 Msun and M2 = 1.91 Msun with
+  the DR17 log g
 - a check that is not quoted in the note: the prior on M2 implied by the Monte Carlo
   (proportional to df/dM2), and the companion mass if it is replaced by a flat prior or by the
   neutron star mass distribution of Alsing, Silva & Berti (2018), written to `fig_m2_prior.png`
@@ -102,6 +108,7 @@ Gaia DR3 2546630699873483008:
 | `data/apogee_dr17_aspcap.csv` | SDSS DR17 SkyServer, `apogeeStar` joined with `aspcapStar` |
 | `data/apogee_dr17_distmass.csv` | SDSS DR17 SkyServer, APOGEE DistMass value-added catalogue (Stone-Martinez et al. 2024) |
 | `data/apogee_dr17_starhorse.csv` | SDSS DR17 SkyServer, APOGEE StarHorse value-added catalogue |
+| `data/apokasc3_table4.csv` | VizieR J/ApJS/276/69 table 4 (APOKASC-3, Pinsonneault et al. 2025), selected columns: KIC, evolutionary state, catalogue, seismic parameters, mass, radius, APOGEE DR17 Teff, log g, [Fe/H], [C/Fe], [N/Fe] |
 | `data/gaia_dr3_2mass.csv` | Gaia archive, `gaiadr3.gaia_source` with its 2MASS cross-match (`tmass_psc_xsc_best_neighbour`, `tmass_psc_xsc_join`, `gaiadr1.tmass_original_valid`): G, BP, RP, J, H, Ks for `j0008_isochrones.py` |
 | `data/gaia_dr3_source_flame.vot.gz` | Gaia archive, `gaiadr3.gaia_source` joined with `gaiadr3.astrophysical_parameters` (the ADQL query is in the file header) |
 
