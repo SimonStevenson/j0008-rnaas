@@ -16,6 +16,7 @@ M2_Zhao_LAMOST_LRS_LASP,2.35,2.07,2.70,Msun,Zhao et al. 2026 (Table 1)
 M2_Zhao_LAMOST_LRS_DDPayne,2.43,2.09,2.83,Msun,Zhao et al. 2026 (Table 1)
 M2_Zhao_LAMOST_MRS_LASP,2.18,1.88,2.54,Msun,Zhao et al. 2026 (Table 1)
 M1_Zhao_MIST,1.48,1.33,1.63,Msun,Zhao et al. 2026 (MIST; 1.45 and 1.52 +/-0.13)
+M1_MIST_tracks,1.29,1.14,1.46,Msun,This note: MIST v1.2 [Fe/H] = -0.25 tracks at Teff = 4964 +/- 40 K and log g = 3.14 (j0008_hrd.py)
 M1_DistMass,1.22,1.07,1.37,Msun,APOGEE DR17 DistMass (Stone-Martinez et al. 2024); 12% scatter
 M1_StarHorse,1.15,1.11,1.20,Msun,APOGEE DR17 StarHorse VAC (mass16/50/84; percentiles poorly sampled so not plotted)
 M1_FLAME,1.85,1.80,1.92,Msun,Gaia DR3 astrophysical_parameters mass_flame

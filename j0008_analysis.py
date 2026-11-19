@@ -194,8 +194,8 @@ BLUE, ORANGE, VIOLET, INK, MUTED = "#2a78d6", "#eb6834", "#6250d6", "#0b0b0b", "
 plt.rcParams.update({"font.size": 8, "axes.edgecolor": MUTED, "axes.labelcolor": INK,
                      "xtick.color": MUTED, "ytick.color": MUTED})
 grid = np.linspace(0.95, 2.0, 200)
-fig, (ax, bx) = plt.subplots(2, 1, figsize=(3.5, 4.0), dpi=300, sharex=True,
-                             gridspec_kw={"height_ratios": [2.1, 1], "hspace": 0.08})
+fig, (ax, bx) = plt.subplots(2, 1, figsize=(3.5, 4.2), dpi=300, sharex=True,
+                             gridspec_kw={"height_ratios": [2.1, 1.17], "hspace": 0.08})
 ax.axhspan(2.15, 2.30, color="#e4e3df", lw=0, zorder=0)
 ax.text(0.97, 2.225, r"max. NS mass (2.15–2.3 M$_\odot$)", va="center", fontsize=6.5, color=MUTED)
 ax.axvspan(1.05, 1.35, color=BLUE, alpha=0.12, lw=0, zorder=0)
@@ -219,6 +219,7 @@ for s in ("top", "right"):
 # (label, (value, lower, upper), colour, show error bar, label side)
 est = [("Zhao+26 adopted (gR²/G, d=1.46 kpc)", inp["M1_Zhao_adopted"], ORANGE, True, "left"),
        ("Zhao+26 MIST isochrones", inp["M1_Zhao_MIST"], ORANGE, True, "left"),
+       ("MIST tracks (Teff, log g)", inp["M1_MIST_tracks"], INK, True, "right"),
        (f"gR²/G at d={d_corr / 1e3:.2f} kpc (parallax)", (m1_plx_mu, m1_plx[0], m1_plx[2]),
         INK, True, "right"),
        ("APOGEE DistMass ([C/N])", inp["M1_DistMass"], BLUE, True, "right"),
