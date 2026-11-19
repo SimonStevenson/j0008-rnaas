@@ -23,6 +23,8 @@ Archived on Zenodo: [doi:10.5281/zenodo.24293381](https://doi.org/10.5281/zenodo
 | `j0008_isochrones.py` | Cross-check of Zhao et al.'s MIST evolutionary mass with the `isochrones` package (not in the note) |
 | `isochrones_results.json` | Results written by `j0008_isochrones.py` |
 | `requirements-isochrones.txt` | Separate environment for `j0008_isochrones.py` |
+| `j0008_apokasc3_selections.py` | Plot of the APOKASC-3 giants around J0008 and the selections behind the seismic-mass comparison (not in the note) |
+| `fig_apokasc3_selections.png`, `.pdf` | The figure written by `j0008_apokasc3_selections.py` |
 | `data/` | Catalogue exports behind `inputs.csv` (see below) |
 
 ## Reproducing the numbers and Figure 1
@@ -92,6 +94,19 @@ With Zhao et al.'s stated DR17 inputs and the package defaults, the fit gives ab
 rather than 1.45 Msun. Their M, R = 5.34 ± 0.04 Rsun and age are approached only when the
 distance is held essentially fixed at 1/parallax and Teff is allowed to drift to about 5010 K
 (case `zhao_dr17_dfixed_teff100`).
+
+## APOKASC-3 selections figure (not in the note)
+
+```
+python j0008_apokasc3_selections.py
+```
+
+This plots the Kepler giants in `data/apokasc3_table4.csv` near J0008 in Teff–log g and
+[Fe/H]–[C/N], coloured by seismic mass. It marks the selections used in `j0008_analysis.py`:
+three broad selections (Teff from 4700, 4800 or 4900 K to 5050 K, log g 3.0–3.3, [Fe/H] and [C/N]
+from −0.3 to 0), and boxes centred on each survey's corrected parameters in Zhao et al. Table S2.
+It also shows the resulting mass distributions, and the median and 16–84% range for each
+selection. It prints the same medians as `j0008_analysis.py`.
 
 ## Rebuilding the note
 
